@@ -1,6 +1,7 @@
 from functools import lru_cache
 import csv
 
+
 @lru_cache
 def read(file_path):
     with open(file_path, encoding="utf-8") as file:
