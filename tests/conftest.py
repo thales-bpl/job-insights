@@ -1,7 +1,7 @@
-import pytest
-from src.jobs import read
+# import pytest
+# from src.jobs import read
 
 
-@pytest.fixture(scope="function", autouse=True)
-def clear_cache():
-    read.cache_clear()
+# @pytest.fixture(scope="function", autouse=True)
+# def clear_cache():
+#     read.cache_clear()
