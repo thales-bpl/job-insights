@@ -4,14 +4,11 @@ import csv
 
 @lru_cache
 def read(file_path):
-    with open(file_path, encoding="utf-8") as file:
-        file_read = csv.DictReader(file, delimiter=",")
-        csv_file_list = []
-        for row in file_read:
-            csv_file_list.append(row)
-
-        # print(csv_file_list[0])
-        return csv_file_list
+    with open(file_path, mode="r") as file:
+        jobs_dict = csv.DictReader(file, delimiter=",")
+        jobs_list = [jobs for jobs in jobs_dict]
+        # return jobs_list[0]
+        return jobs_list
 
 
-# read('src/jobs.csv')
+# print(read('./jobs.csv'))
