@@ -68,7 +68,7 @@ def get_max_salary(path):
     # return all_job_types
     job_list = read(path)
     all_max_salaries = [job['max_salary'] for job in job_list]
-    return max(all_max_salaries)
+    return int(max(all_max_salaries))
     # min(seq)
 
 
