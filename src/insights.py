@@ -1,4 +1,4 @@
-from .jobs import read
+from jobs import read
 
 
 def get_unique_job_types(path: str):
@@ -9,6 +9,9 @@ def get_unique_job_types(path: str):
             all_job_types.append(job["job_type"])
 
     return all_job_types
+
+
+# print(get_unique_job_types('jobs.csv'))
 
 
 def filter_by_job_type(jobs, job_type):
@@ -29,25 +32,15 @@ def get_unique_industries(path: str):
     # return all_industry_types
 
 
-# print(get_unique_industries('/src/jobs.csv'))
+# print(get_unique_industries('jobs.csv'))
 
 
 def filter_by_industry(jobs, industry):
-    """Filters a list of jobs by industry
+    jobs_by_industry = [job for job in jobs if job["industry"] == industry]
+    return jobs_by_industry
 
-    Parameters
-    ----------
-    jobs : list
-        List of jobs to be filtered
-    industry : str
-        Industry for the list filter
 
-    Returns
-    -------
-    list
-        List of jobs with provided industry
-    """
-    return []
+# print(filter_by_industry(read('jobs.csv'), 'Finance'))
 
 
 def get_max_salary(path):
