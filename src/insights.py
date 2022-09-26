@@ -11,9 +11,6 @@ def get_unique_job_types(path: str):
     return all_job_types
 
 
-# print(get_unique_job_types('jobs.csv'))
-
-
 def filter_by_job_type(jobs, job_type):
     jobs_by_type = [job for job in jobs if job["job_type"] == job_type]
     return jobs_by_type
@@ -24,23 +21,10 @@ def get_unique_industries(path: str):
     all_industry = [job["industry"] for job in all_jobs]
     return list(filter(None, set(all_industry)))
 
-    # all_industry_types = []
-    # for job in all_jobs:
-    #     if job["industry"] not in all_industry_types:
-    #         all_industry_types.append(job["job_type"])
-
-    # return all_industry_types
-
-
-# print(get_unique_industries('jobs.csv'))
-
 
 def filter_by_industry(jobs, industry):
     jobs_by_industry = [job for job in jobs if job["industry"] == industry]
     return jobs_by_industry
-
-
-# print(filter_by_industry(read('jobs.csv'), 'Finance'))
 
 
 def get_max_salary(path):
@@ -51,9 +35,6 @@ def get_max_salary(path):
         if job["max_salary"].isnumeric()
         ]
     return max(all_max_salaries)
-
-
-# print(get_max_salary('jobs.csv'))
 
 
 def get_min_salary(path):
