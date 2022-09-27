@@ -47,7 +47,7 @@ def list_jobs():
     industry = request.args.get("industry", None)
     job_type = request.args.get("job_type", None)
 
-    jobs = read(path="src/jobs.csv")
+    jobs = read("src/jobs.csv")
     if industry:
         jobs = filter_by_industry(jobs, industry)
     if job_type:
@@ -76,8 +76,8 @@ def list_jobs():
 
 
 @bp.route("/job/<index>")
-def get_job_info(index):
-    jobs = read(path="src/jobs.csv")
+def job(index):
+    jobs = read("src/jobs.csv")
     job = get_job(jobs, index)
     return render_template("job.jinja2", job=job)
 
